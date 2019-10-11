@@ -6,4 +6,4 @@ Trevor Nichols: change made
 
 Stas Katrechko
 
-Trent J.
+Trent Julich
