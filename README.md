@@ -4,7 +4,7 @@ TEAM: The Job Seekers
 
 Yubo Wang
 
-Trevor Nichols: change made
+Trevor Nichols
 
 Stas Katrechko
 
