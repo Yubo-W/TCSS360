@@ -9,3 +9,9 @@ Trevor Nichols
 Stas Katrechko
 
 Trent Julich
+
+
+
+First iteration of diagram:
+
+![diagram](./imgs/diagram1.png)
