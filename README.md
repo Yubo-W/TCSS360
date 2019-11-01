@@ -15,3 +15,8 @@ Trent Julich
 #### First Iteration of Diagram:
 
 ![diagram](./imgs/diagram1.png)
+
+#### Sequence Diagram
+
+![sequence](./imgs/sequence.jpg)
+
