@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\trevo\Desktop\360_proj\TCSS360\src\.metadata\.plugins\org.eclipse.jdt.core
+113558702.index
+1582864043.index
