@@ -27,16 +27,44 @@ public class MenuBar extends JMenuBar {
 	 */
 	public MenuBar() {
 		myVersion = new ProjectVersion();
-		createHelp();
+		createBar();
 	}
 	
 	/**
 	 * A Method that creates an ABout section within the MenuBar. 
 	 */
-	private void createHelp() {
+	private void createBar() {
 		final JMenu help = new JMenu("Help");
+		final JMenu file = new JMenu("File");
+		file.add(importAction());
+		file.add(exportAction());
 		help.add(aboutAction());
+		add(file);
 		add(help);
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private JMenuItem importAction() {
+		JMenuItem imp = new JMenuItem("Import");
+		
+		//code
+		
+		return imp;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private JMenuItem exportAction() {
+		JMenuItem exp = new JMenuItem("Export");
+		
+		//code
+		
+		return exp;
 	}
 	
 	/**
