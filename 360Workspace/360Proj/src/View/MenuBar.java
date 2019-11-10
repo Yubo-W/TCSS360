@@ -2,10 +2,16 @@ package View;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+
+
+
 import Model.ProjectVersion;
 
 /**
@@ -50,7 +56,21 @@ public class MenuBar extends JMenuBar {
 	private JMenuItem importAction() {
 		JMenuItem imp = new JMenuItem("Import");
 		
-		//code
+		imp.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(final ActionEvent theEvent) {
+				// import was clicked, we allow for file choosing. 
+				JFileChooser fileChooser = new JFileChooser();
+				if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				    File selectedFile = fileChooser.getSelectedFile();
+				    //TODO FIRE PROEPRTY CHANGE EVENT TO BRIDGE TO READ AND CREATE. 
+				}
+				
+				
+			}
+			
+		});
 		
 		return imp;
 	}
@@ -61,6 +81,7 @@ public class MenuBar extends JMenuBar {
 	 */
 	private JMenuItem exportAction() {
 		JMenuItem exp = new JMenuItem("Export");
+		
 		
 		//code
 		
