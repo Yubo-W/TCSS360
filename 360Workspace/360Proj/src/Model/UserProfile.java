@@ -1,6 +1,6 @@
 package Model;
 
-public class UserSettings {
+public class UserProfile {
 	
 	private String myUserName;
 	
