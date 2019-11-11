@@ -17,7 +17,7 @@ public class UserProfileExporter {
 		
 	}
 	
-	public void exportUserProfile(final UserProfile profile) {
+	public static void exportUserProfile(final UserProfile profile) {
 		final String exportedFileName = profile.getUserName()+"_settings.txt";
 		final String exportedFilePath = "./exported_user_profiles/" + exportedFileName;
 		final File newFile = new File(exportedFilePath);

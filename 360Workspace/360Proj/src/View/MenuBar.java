@@ -10,8 +10,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-
-
+import Controller.ImportExportBridge;
 import Model.ProjectVersion;
 
 /**
@@ -42,9 +41,13 @@ public class MenuBar extends JMenuBar {
 	private void createBar() {
 		final JMenu help = new JMenu("Help");
 		final JMenu file = new JMenu("File");
+		
 		file.add(importAction());
 		file.add(exportAction());
+		file.add(settingsAction());
+		
 		help.add(aboutAction());
+		
 		add(file);
 		add(help);
 	}
@@ -64,10 +67,10 @@ public class MenuBar extends JMenuBar {
 				JFileChooser fileChooser = new JFileChooser();
 				if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 				    File selectedFile = fileChooser.getSelectedFile();
-				    //TODO FIRE PROEPRTY CHANGE EVENT TO BRIDGE TO READ AND CREATE. 
+				    
+				    //Calls the bridge to initilize our user. 
+				    ImportExportBridge.importSettings(selectedFile);   
 				}
-				
-				
 			}
 			
 		});
@@ -82,10 +85,35 @@ public class MenuBar extends JMenuBar {
 	private JMenuItem exportAction() {
 		JMenuItem exp = new JMenuItem("Export");
 		
-		
-		//code
+		exp.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(final ActionEvent theEvent) {
+				ImportExportBridge.exportSettings();
+				
+			}
+		});
 		
 		return exp;
+	}
+	
+	/**
+	 * Creates a setting menu function which allows the user to set a username and email. 
+	 * @return Menu Item to be clicked.
+	 */
+	private JMenuItem settingsAction() {
+		JMenuItem settings = new JMenuItem("Settings");
+		
+		settings.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(final ActionEvent theEvent) {
+				UserEmailAndNameWindow window = new UserEmailAndNameWindow();
+				window.generateEmailandUserWindow();
+			}
+		});
+
+		return settings;
 	}
 	
 	/**

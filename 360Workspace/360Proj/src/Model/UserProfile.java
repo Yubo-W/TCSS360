@@ -25,6 +25,11 @@ public class UserProfile {
 		return this.myEmailAddress;
 	}
 	
+	
+	public String toString() {
+		return "User: " + myUserName + "    " + " Email: " + myEmailAddress; 
+	}
+	
 	//TODO create a get and set for the categories. 
 	
 

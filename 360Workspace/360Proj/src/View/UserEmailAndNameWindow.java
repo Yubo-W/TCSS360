@@ -11,13 +11,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import Controller.CurrentUserBridgeDisplay;
 
 public class UserEmailAndNameWindow {
 
-	/*
-	 * property change support to allow firing change events from this. class.
-	 */
-	private final PropertyChangeSupport myPCS = new PropertyChangeSupport(this);
+
 
 
 	/**
@@ -42,9 +40,14 @@ public class UserEmailAndNameWindow {
 		int result = JOptionPane.showConfirmDialog(null, emailUserPanel, "Provide Username and Email.", JOptionPane.OK_CANCEL_OPTION);
 		
 		if (result == JOptionPane.OK_OPTION) {
-			System.out.println("inside");
-			myPCS.firePropertyChange("user", "", username.getText());
-			myPCS.firePropertyChange("email", "", email.getText());
+			
+			//using the design pattern singleton where theres a single instance of the class.
+			CurrentUserBridgeDisplay.setName(username.getText());
+			CurrentUserBridgeDisplay.setEmail(email.getText());
+			
+//			//TODO figure out how to property change event this 
+//			myPCS.firePropertyChange("user", "", username.getText());
+//			myPCS.firePropertyChange("email", "", email.getText());
 		}
 	}
 	

@@ -1,5 +1,6 @@
 package Main;
 
+import Controller.CurrentUserBridgeDisplay;
 import Model.UserProfile;
 import Model.UserProfileExporter;
 import View.UserEmailAndNameWindow;
@@ -24,8 +25,11 @@ public class TestDriver {
 		
 		
 		
-		UserEmailAndNameWindow s = new UserEmailAndNameWindow();
+		UserEmailAndNameWindow s = null;
 		s.generateEmailandUserWindow();
+		
+		
+		System.out.println(CurrentUserBridgeDisplay.printName());
 
 	}
 
