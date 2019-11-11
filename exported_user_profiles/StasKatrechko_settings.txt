@@ -1,0 +1,3 @@
+ttys
+username=StasKatrechko
+email=Stas_98@hotmail.com

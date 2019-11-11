@@ -9,7 +9,7 @@ package Model;
 public class ProjectVersion {
 	
 	//The current version of the program.
-	private String CURR_VERS = "1.0";
+	private String CURR_VERS = "1.1";
 	
 	//The working version of the Program.
 	private String myWorkingVers;

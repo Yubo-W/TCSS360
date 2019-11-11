@@ -37,7 +37,7 @@ public class UserEmailAndNameWindow {
 		
 		
 		//Creating the ok and cancel button. 
-		int result = JOptionPane.showConfirmDialog(null, emailUserPanel, "Provide Username and Email.", JOptionPane.OK_CANCEL_OPTION);
+		int result = JOptionPane.showConfirmDialog(null, emailUserPanel, "Settings", JOptionPane.OK_CANCEL_OPTION);
 		
 		if (result == JOptionPane.OK_OPTION) {
 			

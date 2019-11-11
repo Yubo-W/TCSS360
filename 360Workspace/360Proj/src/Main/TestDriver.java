@@ -5,6 +5,11 @@ import Model.UserProfile;
 import Model.UserProfileExporter;
 import View.UserEmailAndNameWindow;
 
+/**
+ * Test Driver to test functionality of our program. 
+ * @author staskatrechko
+ *
+ */
 public class TestDriver {
 
 	public static void main(String[] args) {
@@ -25,11 +30,11 @@ public class TestDriver {
 		
 		
 		
-		UserEmailAndNameWindow s = null;
-		s.generateEmailandUserWindow();
-		
-		
-		System.out.println(CurrentUserBridgeDisplay.printName());
+//		UserEmailAndNameWindow s = null;
+//		s.generateEmailandUserWindow();
+//		
+//		
+//		System.out.println(CurrentUserBridgeDisplay.printName());
 
 	}
 

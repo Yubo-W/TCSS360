@@ -1,6 +1,9 @@
 package Model;
 
 import java.util.Scanner;
+
+import Controller.CurrentUserBridgeDisplay;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -38,8 +41,8 @@ public class SettingsParser {
 	 * @return a new UserProfile object initialized with values found in the
 	 * settings file given to the SettingsParser.
 	 */
-	public UserProfile importUserSettings() {
-		final UserProfile profile = new UserProfile();
+	public void importUserSettings() {
+		//final UserProfile profile = new UserProfile();
 		if (this.scanner.hasNext()) {
 			String testKey = scanner.next();
 			if (testKey.compareTo("ttys") != 0) {
@@ -48,16 +51,15 @@ public class SettingsParser {
 				while(this.scanner.hasNext()) {
 					final String nextSetting = this.scanner.next();
 					if (nextSetting.contains("username")) {
-						profile.setUserName(nextSetting.split("=")[1]);
+						CurrentUserBridgeDisplay.setName((nextSetting.split("=")[1]));;
 					}
 					if (nextSetting.contains("email")) {
-						profile.setEmailAddress(nextSetting.split("=")[1]);
+						CurrentUserBridgeDisplay.setEmail(nextSetting.split("=")[1]);
 					}
 				}
 			}
 		}
 		this.scanner.close();
-		return profile;
 	}
 
 }
