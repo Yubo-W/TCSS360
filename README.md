@@ -18,6 +18,10 @@ Trent Julich
 
 #### Sequence Diagrams
 
+- Diagram from program startup
+
+  ![startup](./imgs/startup.png)
+
 - Diagram for adding and removing files
 
 ![sequence](./imgs/sequence.jpg)
