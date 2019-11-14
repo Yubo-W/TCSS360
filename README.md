@@ -16,7 +16,27 @@ Trent Julich
 
 ![diagram](./imgs/diagram1.png)
 
-#### Sequence Diagram
+#### Sequence Diagrams
+
+- Diagram for adding and removing files
 
 ![sequence](./imgs/sequence.jpg)
+
+- Diagram for importing settings
+
+  ![import](./imgs/importing.jpeg)
+
+- Diagram for exporting settings
+
+  ![export](./imgs/exporting.jpeg)
+
+- Diagram for searching
+
+  ![search](./imgs/searching.jpeg)
+
+
+
+
+
+
 
