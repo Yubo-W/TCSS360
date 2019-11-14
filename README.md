@@ -24,15 +24,15 @@ Trent Julich
 
 - Diagram for importing settings
 
-  ![import](./imgs/importing.jpeg)
+  ![import](./imgs/importing.JPEG)
 
 - Diagram for exporting settings
 
-  ![export](./imgs/exporting.jpeg)
+  ![export](./imgs/exporting.JPEG)
 
 - Diagram for searching
 
-  ![search](./imgs/searching.jpeg)
+  ![search](./imgs/searching.JPEG)
 
 
 
