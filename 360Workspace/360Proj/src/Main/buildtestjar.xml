@@ -7,7 +7,7 @@
     <property name="dir.workspace" value="${dir.buildfile}/../../.."/>
     <property name="dir.jarfile" value="${dir.workspace}"/>
     <target name="create_run_jar">
-        <jar destfile="${dir.workspace}/TestBuild.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="${dir.workspace}/testBuild.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="Main.Driver"/>
                 <attribute name="Class-Path" value="."/>
