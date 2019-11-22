@@ -5,9 +5,9 @@
     <!--define folder properties-->
     <property name="dir.buildfile" value="."/>
     <property name="dir.workspace" value="${dir.buildfile}/../../.."/>
-    <property name="dir.jarfile" value="${dir.workspace}"/>
+    <property name="dir.jarfile" value="C:/Users/Yubo Wang/Documents/School/CS360/TCSS360"/>
     <target name="create_run_jar">
-        <jar destfile="${dir.workspace}/testBuild.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="${dir.jarfile}/testBuild.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="Main.Driver"/>
                 <attribute name="Class-Path" value="."/>
