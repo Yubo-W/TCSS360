@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * @version 11/24/19
  */
 public class Item {
-	public List<Tag> tags;
-	public String itemName;
+	private List<Tag> tags;
+	private String itemName;
 	
 	/**
 	 * Constructor for item.
