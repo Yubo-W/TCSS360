@@ -65,12 +65,14 @@ public class FileMap {
 	
 	/**
 	 * 
-	 * @return A list of tag names.
+	 * @return An array of tag names (Strings).
 	 */
-	public ArrayList<String> getTagNames() {
-		ArrayList<String> tagNames = new ArrayList<>();
+	public String[] getTagNames() {
+		String[] tagNames = new String[files.size()];
+		int index = 0;
 		for (Tag tag : files.keySet()) {
-			tagNames.add(tag.getName());
+			tagNames[index] = tag.getName();
+			index++;
 		}
 		return tagNames;
 	}
