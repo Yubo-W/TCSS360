@@ -25,7 +25,7 @@ public class Item {
 	}
 	
 	/**
-	 * COnstructor for item with tags to be associated with it.
+	 * Constructor for item with tags to be associated with it.
 	 * 
 	 * @param theName name of the item.
 	 * @param theTags tags to be added to the item.
