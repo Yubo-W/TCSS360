@@ -31,7 +31,7 @@ public class Item {
 	 * @param theTags tags to be added to the item.
 	 */
 	public Item(final String theName, final List<Tag> theTags) {
-		String itemName = theName;
+		itemName = theName;
 		tags = new ArrayList<>();
 		for (Tag temp : theTags) {
 			tags.add(temp);
