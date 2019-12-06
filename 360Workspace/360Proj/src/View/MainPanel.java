@@ -134,7 +134,7 @@ public class MainPanel extends JPanel {
 	    		if (result == JOptionPane.OK_OPTION) {
 	    			storage.addCategory(new Tag(tag.getText()));
 	    			tagNames.addElement(tag.getText());
-	    			repaint();
+	    			tagList.setModel(tagNames);
 	    		}
 			}
 		});
