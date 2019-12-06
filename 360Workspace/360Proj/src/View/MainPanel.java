@@ -118,8 +118,7 @@ public class MainPanel extends JPanel {
 				if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 				    File selectedFile = fileChooser.getSelectedFile();
 				    
-				    //Calls the bridge to initilize our user. 
-				    ImportExportBridge.importSettings(selectedFile);   
+				    //TODO update and add the file to the Tag
 				}
 			}
 			
