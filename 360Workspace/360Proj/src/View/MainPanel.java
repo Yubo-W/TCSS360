@@ -7,10 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.Box;
 import javax.swing.DefaultListModel;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -21,32 +18,48 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.filechooser.FileSystemView;
-
-import Controller.CurrentUserBridgeDisplay;
-import Controller.ImportExportBridge;
 import Model.FileMap;
-import Model.Item;
 import Model.Tag;
 
-
+/**
+ * This program acts as the main panel of our GUI layout.
+ * 
+ * @author Trevor Nichols
+ *
+ */
 public class MainPanel extends JPanel {
 
-	/**
-	 * 
-	 */
+	/**Id for serialization*/
 	private static final long serialVersionUID = -1931505285368286964L;
-	
+
+	//A button for addign a tag.
 	private JButton tagAdd;
+	
+	//A button for deleting a tag.
 	private JButton tagDelete;
+	
+	//A button for adding an item.
 	private JButton itemAdd;
+	
+	//A button for deleting an item.
 	private JButton itemDelete;
+	
+	//A List of tags for the gui.
 	private JList<String> tagList;
+	
+	//A map or tags to items.
 	private FileMap storage;
-	private JPanel tagScroll;
+	
+	//A Panel that holds a list and buttons.
+	private JPanel tagScroll; // this can probably be deleted.
+	
+	//A model for holding Strings.
 	private DefaultListModel<String> tagNames;
 
 
+	/*
+	 * A constructor for initilizaing the main panel.
+	 */
 	public MainPanel() {
 		storage = new FileMap();
 		tagNames = new DefaultListModel<String>();
@@ -55,18 +68,13 @@ public class MainPanel extends JPanel {
 		createItemWindow();
 	}
 	
+	/*
+	 * Creates a Tag window for selecting tags
+	 */
 	private void createTagWindow() {
 		
 		tagScroll = new JPanel(new BorderLayout());
 		JPanel projectButtn = new JPanel(new FlowLayout());
-		
-		/*
-		 * Need to add button listeners for adding and deleting
-		 * keys from our map which means we will have to pop up
-		 * a new window for add to gather information and a window to 
-		 * confirm delete. the listener should also refresh the projectScroll
-		 * panel, so that the updates are visible
-		 */
 		tagAdd = new JButton("Add Tag");
 		addTagListener();
 		tagDelete= new JButton("Delete Tag");
@@ -78,14 +86,6 @@ public class MainPanel extends JPanel {
 		
 		tagScroll.add(projectButtn, BorderLayout.NORTH);
 	
-		
-		//add all the key values from our map to this JList.
-		
-		/*
-		 * Need to add a listselectionlistener that populates
-		 * another window with all the values for the selected key/keys
-		 * should refresh the window containing all values.
-		*/
 		tagList = new JList<String>(storage.getTagNames());
 		addTagListListener();
 		
@@ -95,6 +95,9 @@ public class MainPanel extends JPanel {
 		add(tagScroll, BorderLayout.WEST);
 	}
 	
+	/*
+	 * Creates an item window for showing items for a selected tag.
+	 */
 	private void createItemWindow() {
 
 		//attempting to get the documents window to display correctly.
@@ -136,6 +139,9 @@ public class MainPanel extends JPanel {
 		add(documents, BorderLayout.CENTER);
 	}
 	
+	/*
+	 * Adds a Listener used when selecting from a list.
+	 */
 	private void addTagListListener() {
 		tagList.addListSelectionListener((ListSelectionListener) new ListSelectionListener()
 		{
@@ -148,6 +154,9 @@ public class MainPanel extends JPanel {
 		});
 	}
 	
+	/*
+	 * Adds a listener for adding a tag.
+	 */
 	private void addTagListener() {
 		tagAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent theEvent) {
@@ -172,6 +181,9 @@ public class MainPanel extends JPanel {
 		});
 	}
 	
+	/*
+	 * Adds a listener for deleting a tag.
+	 */
 	private void deleteTagListener() {
 		tagDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent theEvent) {
