@@ -1,0 +1,25 @@
+The Jobseekers
+November 26, 2019
+
+Item class
+
+User sories:
+  -Add
+  -Remove
+  -Sort
+  -Search
+
+In the design diagram it is represented ad the Item Class.
+
+Our source code is located inside the src -> Model -> Item.java
+here is a link to where the source code can be found:
+
+https://github.com/Yubo-W/TCSS360/tree/settings-branch/360Workspace/360Proj/src/Model
+
+The source coded for our test can be found in src -> Test -> TagsAndItemTest.java
+here is a link: 
+
+https://github.com/Yubo-W/TCSS360/tree/settings-branch/360Workspace/360Proj/src/Test
+
+Our build automation consists of an ANT file that creates a runnable jar anytime the code
+is run.

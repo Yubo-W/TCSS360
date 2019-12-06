@@ -30,6 +30,7 @@ public class MainWindow extends JFrame {
 	public MainWindow() {
 		setSize(SCREEN_SIZE);
 		setJMenuBar(new MenuBar());
+		add(new MainPanel());
 	}
 	
 	/**
