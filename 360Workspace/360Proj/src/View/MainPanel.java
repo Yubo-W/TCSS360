@@ -12,6 +12,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -23,6 +24,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileSystemView;
 
 import Controller.CurrentUserBridgeDisplay;
+import Controller.ImportExportBridge;
 import Model.FileMap;
 import Model.Item;
 import Model.Tag;
@@ -106,6 +108,24 @@ public class MainPanel extends JPanel {
 		itemDelete = new JButton("Delete File");
 		itemAdd.setEnabled(false);
 		itemDelete.setEnabled(false);
+		
+		itemAdd.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(final ActionEvent theEvent) {
+				// import was clicked, we allow for file choosing. 
+				JFileChooser fileChooser = new JFileChooser();
+				if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				    File selectedFile = fileChooser.getSelectedFile();
+				    
+				    //Calls the bridge to initilize our user. 
+				    ImportExportBridge.importSettings(selectedFile);   
+				}
+			}
+			
+		});
+		
+		
 		documentButtn.add(itemAdd);
 		documentButtn.add(itemDelete);		
 		documents.add(documentButtn, BorderLayout.NORTH);
