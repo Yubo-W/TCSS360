@@ -67,7 +67,8 @@ public class MainPanel extends JPanel {
 		 */
 		tagAdd = new JButton("Add Tag");
 		addTagListener();
-		tagDelete= new JButton("Delete Project");
+		tagDelete= new JButton("Delete Tag");
+		deleteTagListener();
 		tagDelete.setEnabled(false);
 		
 		projectButtn.add(tagAdd);
@@ -123,6 +124,7 @@ public class MainPanel extends JPanel {
 		    public void valueChanged(ListSelectionEvent e)
 		    {
 		    	tagDelete.setEnabled(true);
+		    	itemAdd.setEnabled(true);
 		    }
 		});
 	}
@@ -145,6 +147,20 @@ public class MainPanel extends JPanel {
 	    			storage.addCategory(new Tag(tag.getText()));
 	    			tagNames.addElement(tag.getText());
 	    			tagList.setModel(tagNames);
+	    			tagDelete.setEnabled(false);
+	    		}
+			}
+		});
+	}
+	
+	private void deleteTagListener() {
+		tagDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent theEvent) {
+
+	    		int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete?", "Add Tag", JOptionPane.OK_CANCEL_OPTION);
+	    		
+	    		if (result == JOptionPane.OK_OPTION) {
+	    			
 	    		}
 			}
 		});
