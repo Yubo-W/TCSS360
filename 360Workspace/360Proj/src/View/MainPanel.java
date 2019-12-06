@@ -160,7 +160,9 @@ public class MainPanel extends JPanel {
 	    		int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete?", "Add Tag", JOptionPane.OK_CANCEL_OPTION);
 	    		
 	    		if (result == JOptionPane.OK_OPTION) {
-	    			
+	    			storage.removeCategory(tagList.getSelectedValue());
+	    			tagNames.removeElement(tagList.getSelectedValue());
+	    			tagList.setModel(tagNames);
 	    		}
 			}
 		});
