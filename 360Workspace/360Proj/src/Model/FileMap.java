@@ -75,6 +75,20 @@ public class FileMap {
 	
 	/**
 	 * 
+	 * 
+	 * @param theTagName
+	 */
+	public void removeCategory(String theTagName) {
+		for (Tag tag : files.keySet()) {
+			if (tag.getName().equals(theTagName)) {
+				files.remove(tag);
+				break;
+			}
+		}
+	}
+	
+	/**
+	 * 
 	 * @return An array of tag names (Strings).
 	 */
 	public String[] getTagNames() {

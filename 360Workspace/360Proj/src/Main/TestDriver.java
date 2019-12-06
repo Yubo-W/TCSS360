@@ -4,6 +4,8 @@ import Controller.CurrentUserBridgeDisplay;
 import Model.UserProfile;
 import Model.UserProfileExporter;
 import View.UserEmailAndNameWindow;
+import Model.FileMap;
+import Model.*;
 
 /**
  * Test Driver to test functionality of our program. 
@@ -14,27 +16,17 @@ public class TestDriver {
 
 	public static void main(String[] args) {
 	
+		FileMap map = new FileMap();
+		Tag theTag = new Tag("Tag");
+		Item theItem = new Item("Test Item", theTag);
+		map.addCategory(theTag);
 		
-//		
-//		UserProfile theUser = new UserProfile();
-//		
-//		
-//		theUser.setEmailAddress("The@hotmail.com");
-//		theUser.setUserName("stas");
-//		
-//		
-//		UserProfileExporter exportObject = new UserProfileExporter();
-//		
-//		exportObject.exportUserProfile(theUser);
-//		
+		System.out.println(map.getTagNames()[0]);
 		
+		map.removeCategory("Tag");
 		
+		System.out.println(map.getTagNames()[0]);
 		
-//		UserEmailAndNameWindow s = null;
-//		s.generateEmailandUserWindow();
-//		
-//		
-//		System.out.println(CurrentUserBridgeDisplay.printName());
 
 	}
 
