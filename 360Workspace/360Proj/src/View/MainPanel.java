@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileSystemView;
 
 import Controller.CurrentUserBridgeDisplay;
@@ -82,6 +84,7 @@ public class MainPanel extends JPanel {
 		 * should refresh the window containing all values.
 		*/
 		tagList = new JList<String>(storage.getTagNames());
+		addTagListListener();
 		
 		JScrollPane projects = new JScrollPane(tagList);
 		tagScroll.add(projects, BorderLayout.CENTER);
@@ -114,7 +117,14 @@ public class MainPanel extends JPanel {
 	}
 	
 	private void addTagListListener() {
-		
+		tagList.addListSelectionListener((ListSelectionListener) new ListSelectionListener()
+		{
+		    @Override
+		    public void valueChanged(ListSelectionEvent e)
+		    {
+		    	tagDelete.setEnabled(true);
+		    }
+		});
 	}
 	
 	private void addTagListener() {
