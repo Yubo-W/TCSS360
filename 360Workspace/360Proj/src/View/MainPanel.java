@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -19,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import Model.FileMap;
+import Model.Item;
 import Model.Tag;
 
 /**
@@ -26,6 +28,10 @@ import Model.Tag;
  * 
  * @author Trevor Nichols
  *	Date: 12/05/19
+ *
+ * @author Yubo Wang
+ * 	Date: 12/11/2019
+ *	Update: Added the functionality for the GUI to be able to display files that are in the storge
  */
 public class MainPanel extends JPanel {
 
@@ -47,6 +53,9 @@ public class MainPanel extends JPanel {
 	//A List of tags for the gui.
 	private JList<String> tagList;
 	
+	//A list of files for gui.
+	private JList<String> fileList;
+	
 	//A map or tags to items.
 	private FileMap storage;
 	
@@ -55,6 +64,9 @@ public class MainPanel extends JPanel {
 	
 	//A model for holding Strings.
 	private DefaultListModel<String> tagNames;
+	
+	//A model for holding files.
+	private DefaultListModel<String> theFiles;
 
 
 	/**
@@ -66,6 +78,7 @@ public class MainPanel extends JPanel {
 	public MainPanel() {
 		storage = new FileMap();
 		tagNames = new DefaultListModel<String>();
+		theFiles = new DefaultListModel<String>();
 		setLayout(new BorderLayout());
 		createTagWindow();
 		createItemWindow();
@@ -114,7 +127,8 @@ public class MainPanel extends JPanel {
 		
 		//attempting to get the documents window to display correctly.
 		JPanel documents = new JPanel(new BorderLayout());
-		JPanel icons = new JPanel(new GridLayout(0, 10, 6, 6));
+		fileList = new JList<String>();
+		JScrollPane files = new JScrollPane(fileList);
 		
 		//Add and Delete buttons for files.
 		//Still need Action listeners for adding and deleting documents from storage.
@@ -123,6 +137,7 @@ public class MainPanel extends JPanel {
 		itemDelete = new JButton("Delete File");
 		itemAdd.setEnabled(false);
 		itemDelete.setEnabled(false);
+		
 		
 		itemAdd.addActionListener(new ActionListener() {
 
@@ -133,7 +148,17 @@ public class MainPanel extends JPanel {
 				if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 				    File selectedFile = fileChooser.getSelectedFile();
 				    
-				    //TODO update and add the file to the Tag
+				    /*
+				     * author: Yubo Wang
+				     * Adds the user ability to add a file and categorize it into the storage.
+				     */
+				    String fileName = selectedFile.getName();
+				    String category = JOptionPane.showInputDialog("What category does this item belong in?");
+				    
+				    // converts category name into correct input format
+				    category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();
+				    final Tag newTag = new Tag(category);
+				    storage.addFile(new Item(fileName, newTag), category);
 				}
 			}
 			
@@ -143,10 +168,8 @@ public class MainPanel extends JPanel {
 		documentButtn.add(itemAdd);
 		documentButtn.add(itemDelete);		
 		documents.add(documentButtn, BorderLayout.NORTH);
-		
-		
-		JScrollPane scrollIcon = new JScrollPane(icons);
-		documents.add(scrollIcon, BorderLayout.CENTER);
+
+		documents.add(files, BorderLayout.CENTER);
 		
 		add(documents, BorderLayout.CENTER);
 	}
@@ -165,6 +188,16 @@ public class MainPanel extends JPanel {
 		    {
 		    	tagDelete.setEnabled(true);
 		    	itemAdd.setEnabled(true);
+		    	
+    			// @author: Yubo Wang
+    			// setting the fileList properly
+    			String currTag = tagList.getSelectedValue();
+    			final List<String> tempFiles = storage.getItems(currTag);
+    			theFiles.clear();
+    			for (String name : tempFiles) {
+    				theFiles.addElement(name);
+    			}
+    			fileList.setModel(theFiles);
 		    }
 		});
 	}
