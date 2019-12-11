@@ -124,6 +124,9 @@ public class MenuBar extends JMenuBar {
 	private JMenuItem aboutAction() {
 		JMenuItem about = new JMenuItem("About");
 		StringBuilder str = new StringBuilder();
+		str.append("This program is designed to allow useres to store and organize\n");
+		str.append("documents for different projects in one location in order to\n");
+		str.append("make the retrival of documents easier.\n");
 		str.append("Version: ");
 		str.append(myVersion.getVersion());
 		str.append("\nDevelopers: Stas, Trent, Trevor, Yubo");
