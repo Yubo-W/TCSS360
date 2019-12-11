@@ -15,9 +15,6 @@ import Controller.CurrentUserBridgeDisplay;
 
 public class UserEmailAndNameWindow {
 
-
-
-
 	/**
 	 * creates a window and prompts for user and email, and when clicked ok, will fireproperty change event to currentUserBridge
 	 * to provide less coupling.  

@@ -25,7 +25,7 @@ import Model.Tag;
  * This program acts as the main panel of our GUI layout.
  * 
  * @author Trevor Nichols
- *
+ *	Date: 12/05/19
  */
 public class MainPanel extends JPanel {
 
@@ -57,8 +57,11 @@ public class MainPanel extends JPanel {
 	private DefaultListModel<String> tagNames;
 
 
-	/*
+	/**
 	 * A constructor for initilizaing the main panel.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 12/05/19
 	 */
 	public MainPanel() {
 		storage = new FileMap();
@@ -68,8 +71,11 @@ public class MainPanel extends JPanel {
 		createItemWindow();
 	}
 	
-	/*
+	/**
 	 * Creates a Tag window for selecting tags
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 12/05/19
 	 */
 	private void createTagWindow() {
 		
@@ -95,11 +101,17 @@ public class MainPanel extends JPanel {
 		add(tagScroll, BorderLayout.WEST);
 	}
 	
-	/*
-	 * Creates an item window for showing items for a selected tag.
+	/**
+	 * Creates an item window for showing items of a selected tag.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 12/05/19
 	 */
 	private void createItemWindow() {
-
+		//This if the window that should appear when a project has been selected
+		//and should update ad files are added.
+		//Our third user story.
+		
 		//attempting to get the documents window to display correctly.
 		JPanel documents = new JPanel(new BorderLayout());
 		JPanel icons = new JPanel(new GridLayout(0, 10, 6, 6));
@@ -139,8 +151,11 @@ public class MainPanel extends JPanel {
 		add(documents, BorderLayout.CENTER);
 	}
 	
-	/*
+	/**
 	 * Adds a Listener used when selecting from a list.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 12/05/19
 	 */
 	private void addTagListListener() {
 		tagList.addListSelectionListener((ListSelectionListener) new ListSelectionListener()
@@ -154,8 +169,11 @@ public class MainPanel extends JPanel {
 		});
 	}
 	
-	/*
+	/**
 	 * Adds a listener for adding a tag.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 12/05/19
 	 */
 	private void addTagListener() {
 		tagAdd.addActionListener(new ActionListener() {
@@ -181,8 +199,11 @@ public class MainPanel extends JPanel {
 		});
 	}
 	
-	/*
+	/**
 	 * Adds a listener for deleting a tag.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 12/05/19
 	 */
 	private void deleteTagListener() {
 		tagDelete.addActionListener(new ActionListener() {

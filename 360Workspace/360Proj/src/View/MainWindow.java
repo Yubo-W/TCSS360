@@ -9,7 +9,7 @@ import javax.swing.JFrame;
  * This class represents the main window of our program.
  * 
  * @author Trevor Nichols
- *
+ * Date: 11/15/19
  */
 public class MainWindow extends JFrame {
 
@@ -26,6 +26,9 @@ public class MainWindow extends JFrame {
 	/**
 	 * Constructs a new MainWindow where the rest of the UI components will
 	 * be placed.
+	 * 
+	 * @author Trevor Nichols
+	 * Date 11/15/19
 	 */
 	public MainWindow() {
 		setSize(SCREEN_SIZE);
@@ -35,6 +38,9 @@ public class MainWindow extends JFrame {
 	
 	/**
 	 * Displays the MainWindow.
+	 * 
+	 * @author Trevor Nichols
+	 * Date 11/15/19
 	 */
 	public void run() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
