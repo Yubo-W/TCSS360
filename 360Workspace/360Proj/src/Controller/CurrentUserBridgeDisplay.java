@@ -17,7 +17,7 @@ public class CurrentUserBridgeDisplay  {
 	 * @author Stas Katrechko
 	 * We want one instance of UserProfile, since one user at a time will be using this program, which will store email, name and other information.
 	 */
-    static UserProfile myUserProfileInfo = new UserProfile();
+    public static UserProfile myUserProfileInfo = new UserProfile();
 	
 	/*
 	 * @author Stas Katrechko

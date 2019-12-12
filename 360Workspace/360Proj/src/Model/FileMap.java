@@ -34,6 +34,7 @@ public class FileMap {
 	 * @param theTag The tag to map the item to.
 	 * 
 	 * Author: Yubo Wang
+	 * Author: Trent Julich
 	 * Update: Client is now able to add items names of tags.
 	 * Date: 12/11/2019
 	 */
@@ -87,27 +88,18 @@ public class FileMap {
 	 * Adds a category to the map. Maps the tag to an empty item list.
 	 * 
 	 * @param theCategory The tag to be added to the file map.
+	 * @author Trent Julich
 	 */
 	public void addCategory(Tag theCategory) {
 		ArrayList<Item> emptyList= new ArrayList<>();
 		files.put(theCategory, emptyList);
 	}
 	
-	/**
-	 * 
-	 * @param theItem
-	 * @param theTag
-	 */
-	public void removeFile(Item theItem, Tag theTag) {
-		
-	}
 	
 	/**
+	 * Removes the specified category from the filemap.
 	 * 
-	 * 
-	 * 
-	 * 
-	 * @param theTagName
+	 * @param theTagName Name of the tag to remove.
 	 *
 	 * @author Trent Julich
 	 * @date 12/11/19
