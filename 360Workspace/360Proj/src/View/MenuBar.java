@@ -41,7 +41,7 @@ public class MenuBar extends JMenuBar {
 	/**
 	 * A Method that creates an ABout section within the MenuBar. 
 	 * 
-	 * @author Trevor Nichols
+	 * @author Trevor Nichols And Stas Katrechko 
 	 * Date: 11/15/19
 	 */
 	private void createBar() {
@@ -59,8 +59,9 @@ public class MenuBar extends JMenuBar {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * import action, that allows our import function to work properly
+	 * @author Stas Katrechko
+	 * @return import item to used 
 	 */
 	private JMenuItem importAction() {
 		JMenuItem imp = new JMenuItem("Import");
@@ -85,8 +86,10 @@ public class MenuBar extends JMenuBar {
 	}
 	
 	/**
+	 * @author Stas Katrechko
+	 * Export action function and button. 
 	 * 
-	 * @return
+	 * @return menu item that has an action listerner attaached to it. 
 	 */
 	private JMenuItem exportAction() {
 		JMenuItem exp = new JMenuItem("Export");
@@ -104,6 +107,7 @@ public class MenuBar extends JMenuBar {
 	}
 	
 	/**
+	 * @author Stas Katrechko
 	 * Creates a setting menu function which allows the user to set a username and email. 
 	 * @return Menu Item to be clicked.
 	 */

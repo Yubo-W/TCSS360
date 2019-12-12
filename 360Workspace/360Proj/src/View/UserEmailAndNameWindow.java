@@ -6,10 +6,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import Controller.CurrentUserBridgeDisplay;
-
+/**
+ * 
+ * @author staskatrechko
+ * 
+ */
 public class UserEmailAndNameWindow {
 
 	/**
+	 * @author Stas Katrechko
 	 * creates a window and prompts for user and email, and when clicked ok, will fireproperty change event to currentUserBridge
 	 * to provide less coupling.  
 	 */
