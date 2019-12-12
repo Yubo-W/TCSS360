@@ -17,7 +17,7 @@ import Model.ProjectVersion;
  * A class that represents a MenuBar.
  * 
  * @author Trevor Nichols 
- *
+ * Date: 11/15/19
  */
 public class MenuBar extends JMenuBar {
 
@@ -29,6 +29,9 @@ public class MenuBar extends JMenuBar {
 	
 	/**
 	 * Initializes the MenuBar.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 11/15/19
 	 */
 	public MenuBar() {
 		myVersion = new ProjectVersion();
@@ -37,6 +40,9 @@ public class MenuBar extends JMenuBar {
 	
 	/**
 	 * A Method that creates an ABout section within the MenuBar. 
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 11/15/19
 	 */
 	private void createBar() {
 		final JMenu help = new JMenu("Help");
@@ -120,10 +126,16 @@ public class MenuBar extends JMenuBar {
 	 * Creates an JMenuItem with an action linked to it.
 	 * 
 	 * @return JMenuItem for the About section.
+	 * 
+	 * @author Trevor Nichols
+	 * Date: 11/15/19
 	 */
 	private JMenuItem aboutAction() {
 		JMenuItem about = new JMenuItem("About");
 		StringBuilder str = new StringBuilder();
+		str.append("This program is designed to allow useres to store and organize\n");
+		str.append("documents for different projects in one location in order to\n");
+		str.append("make the retrival of documents easier.\n");
 		str.append("Version: ");
 		str.append(myVersion.getVersion());
 		str.append("\nDevelopers: Stas, Trent, Trevor, Yubo");

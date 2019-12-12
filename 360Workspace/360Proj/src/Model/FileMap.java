@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.ArrayList;
 
 /**
@@ -28,17 +29,42 @@ public class FileMap {
 	 * 
 	 * @param theItem The item to add to the map.
 	 * @param theTag The tag to map the item to.
+	 * 
+	 * Author: Yubo Wang
+	 * Update: Client is now able to add items names of tags.
+	 * Date: 12/11/2019
 	 */
-	public void addFile(Item theItem, Tag theTag) {
-		if (!files.containsKey(theTag)) {
-			ArrayList<Item> items = new ArrayList<Item>();
-			items.add(theItem);
-			files.put(theTag, items);
-		} else {
-			ArrayList<Item> tempList = files.get(theTag);
-			tempList.add(theItem);
-			files.put(theTag, tempList);
+	public void addFile(Item theItem, String theTagName) {
+		boolean found = false;
+		for (Tag tag : files.keySet()) {
+			if(tag.getName().equals(theTagName)) {
+				found = true;
+				break;
+			}
 		}
+		if(found) {
+			for (Tag tag : files.keySet()) {
+				if(tag.getName().equals(theTagName)) {
+					files.get(tag).add(theItem);
+				}
+			}
+		} else {
+			Tag newTag = new Tag(theTagName);
+			files.put(newTag, new ArrayList<Item>());
+			files.get(newTag).add(theItem);
+		}
+
+		
+		
+//		  if (!files.containsKey(theTag)) { 
+//			  ArrayList<Item> items = new ArrayList<Item>(); 
+//			  items.add(theItem); files.put(theTag, items); 
+//		  } else {
+//			  ArrayList<Item> tempList = files.get(theTag); 
+//			  tempList.add(theItem);
+//			  files.put(theTag, tempList); 
+//		  }
+			 
 	}
 	
 	/**
@@ -48,11 +74,11 @@ public class FileMap {
 	 * @param theItem Item to add to the map.
 	 * @param theTags The list of tags to map the item to.
 	 */
-	public void addFile(Item theItem, ArrayList<Tag> theTags) {
-		for (Tag tag : theTags) {
-			addFile(theItem, tag);
-		}
-	}
+//	public void addFile(Item theItem, ArrayList<Tag> theTags) {
+//		for (Tag tag : theTags) {
+//			addFile(theItem, tag);
+//		}
+//	}
 	
 	/**
 	 * Adds a category to the map. Maps the tag to an empty item list.
@@ -99,5 +125,25 @@ public class FileMap {
 			index++;
 		}
 		return tagNames;
+	}
+	
+	/**
+	 * Get Items for a specific tag.
+	 * @return ArrayList of Items belonging to this Tag.
+	 * 
+	 * @author Yubo Wang
+	 */
+	public List<String> getItems(final String theTag) {
+		ArrayList<Item> temp = new ArrayList<Item>();
+		ArrayList<String> result = new ArrayList<String>();
+		for (Tag tag : files.keySet()) {
+			if(tag.getName().equals(theTag)) {
+				temp = files.get(tag);
+			}
+		}
+		for (Item item : temp) {
+			result.add(item.getName());
+		}
+		return result;
 	}
 }
