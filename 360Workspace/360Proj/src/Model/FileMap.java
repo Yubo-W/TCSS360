@@ -137,6 +137,7 @@ public class FileMap {
 	 * @return ArrayList of Items belonging to this Tag.
 	 * 
 	 * @author Yubo Wang
+	 * @author Trent Julich
 	 */
 	public List<String> getItems(final String theTag) {
 		ArrayList<Item> temp = new ArrayList<Item>();
