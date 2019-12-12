@@ -156,7 +156,6 @@ public class MainPanel extends JPanel {
 				    String category = JOptionPane.showInputDialog("What category does this item belong in?");
 				    
 				    // converts category name into correct input format
-				    category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();
 				    final Tag newTag = new Tag(category);
 				    storage.addFile(new Item(fileName, newTag), category);
 				    
