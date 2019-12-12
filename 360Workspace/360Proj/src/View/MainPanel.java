@@ -159,6 +159,14 @@ public class MainPanel extends JPanel {
 				    category = category.substring(0,1).toUpperCase() + category.substring(1).toLowerCase();
 				    final Tag newTag = new Tag(category);
 				    storage.addFile(new Item(fileName, newTag), category);
+				    
+	    			String currTag = tagList.getSelectedValue();
+	    			final List<String> tempFiles = storage.getItems(currTag);
+	    			theFiles.clear();
+	    			for (String name : tempFiles) {
+	    				theFiles.addElement(name);
+	    			}
+	    			fileList.setModel(theFiles);
 				}
 			}
 			
@@ -227,6 +235,7 @@ public class MainPanel extends JPanel {
 	    			tagNames.addElement(tag.getText());
 	    			tagList.setModel(tagNames);
 	    			tagDelete.setEnabled(false);
+	    			tagList.setSelectedIndex(tagNames.getSize() - 1);
 	    		}
 			}
 		});
