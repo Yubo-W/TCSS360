@@ -1,11 +1,8 @@
 package Controller;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 import Model.UserProfile;
-import View.UserEmailAndNameWindow;
 
 /**
  * 
@@ -37,7 +34,7 @@ public class CurrentUserBridgeDisplay  {
 	}
 	
 	/**
-	 * A bridge between Model and GUI that will initilize our Email value in our single instance of UserProfile.
+	 * A bridge between Model and GUI that will initialize our Email value in our single instance of UserProfile.
 	 * 
 	 * @param theUserEmail the user Email that the user has specified.
 	 */

@@ -38,7 +38,7 @@ public class MainPanel extends JPanel {
 	/**Id for serialization*/
 	private static final long serialVersionUID = -1931505285368286964L;
 
-	//A button for addign a tag.
+	//A button for adding a tag.
 	private JButton tagAdd;
 	
 	//A button for deleting a tag.
@@ -50,10 +50,10 @@ public class MainPanel extends JPanel {
 	//A button for deleting an item.
 	private JButton itemDelete;
 	
-	//A List of tags for the gui.
+	//A List of tags for the GUI.
 	private JList<String> tagList;
 	
-	//A list of files for gui.
+	//A list of files for GUI.
 	private JList<String> fileList;
 	
 	//A map or tags to items.
@@ -70,7 +70,7 @@ public class MainPanel extends JPanel {
 
 
 	/**
-	 * A constructor for initilizaing the main panel.
+	 * A constructor for initializing the main panel.
 	 * 
 	 * @author Trevor Nichols
 	 * Date: 12/05/19
