@@ -13,11 +13,14 @@ import java.io.IOException;
  */
 public class UserProfileExporter {
 	
-	
-	public UserProfileExporter() {
-		
-	}
-	
+	/**
+	 * Takes the given user profiles, and writes it to a text file.
+	 * 
+	 * @param profile The profile to export.
+	 *
+	 * @author Trent Julich
+	 * @date 11/10/19
+	 */
 	public static void exportUserProfile(final UserProfile profile) {
 		final String exportedFileName = profile.getUserName()+"_settings.txt";
 		final String exportedFilePath = "./exported_user_profiles/" + exportedFileName;
@@ -33,6 +36,5 @@ public class UserProfileExporter {
 			e.printStackTrace();
 		}
 	}
-	
 	
 }

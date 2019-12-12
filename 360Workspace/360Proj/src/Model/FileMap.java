@@ -19,6 +19,9 @@ public class FileMap {
 	
 	/**
 	 * Constructor for new FileMap.
+	 * 
+	 * @author Trent Julich
+	 * @version 12/11/19
 	 */
 	public FileMap() {
 		this.files = new HashMap<Tag, ArrayList<Item>>();
@@ -102,7 +105,12 @@ public class FileMap {
 	/**
 	 * 
 	 * 
+	 * 
+	 * 
 	 * @param theTagName
+	 *
+	 * @author Trent Julich
+	 * @date 12/11/19
 	 */
 	public void removeCategory(String theTagName) {
 		for (Tag tag : files.keySet()) {
@@ -114,8 +122,13 @@ public class FileMap {
 	}
 	
 	/**
+	 * Returns an array of strings representing the names of
+	 * all of the keys in the map.
 	 * 
 	 * @return An array of tag names (Strings).
+	 *
+	 * @author Trent Julich
+	 * @date 12/11/19
 	 */
 	public String[] getTagNames() {
 		String[] tagNames = new String[files.size()];

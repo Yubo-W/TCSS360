@@ -23,6 +23,9 @@ public class SettingsParser {
 	 * to be read as a parameter.
 	 * 
 	 * @param settingsFile The file in which to read the users settings from.
+	 *
+	 * @author Trent Julich
+	 * @date 11/10/19
 	 */
 	public SettingsParser(final File settingsFile) {
 		this.userSettings = settingsFile;
@@ -40,9 +43,11 @@ public class SettingsParser {
 	 * 
 	 * @return a new UserProfile object initialized with values found in the
 	 * settings file given to the SettingsParser.
+	 *
+	 * @author Trent Julich
+	 * @date 11/10/19
 	 */
 	public void importUserSettings() {
-		//final UserProfile profile = new UserProfile();
 		if (this.scanner.hasNext()) {
 			String testKey = scanner.next();
 			if (testKey.compareTo("ttys") != 0) {
