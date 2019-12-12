@@ -153,9 +153,9 @@ public class MainPanel extends JPanel {
 				     * Adds the user ability to add a file and categorize it into the storage.
 				     */
 				    String fileName = selectedFile.getName();
-				    String category = JOptionPane.showInputDialog("What category does this item belong in?");
 				    
 				    // converts category name into correct input format
+				    String category = tagList.getSelectedValue();
 				    final Tag newTag = new Tag(category);
 				    storage.addFile(new Item(fileName, newTag), category);
 				    
