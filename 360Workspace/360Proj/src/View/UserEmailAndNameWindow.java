@@ -41,9 +41,6 @@ public class UserEmailAndNameWindow {
 			CurrentUserBridgeDisplay.setName(username.getText());
 			CurrentUserBridgeDisplay.setEmail(email.getText());
 			
-//			//TODO figure out how to property change event this 
-//			myPCS.firePropertyChange("user", "", username.getText());
-//			myPCS.firePropertyChange("email", "", email.getText());
 		}
 	}
 	

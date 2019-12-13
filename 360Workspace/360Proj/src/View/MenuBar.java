@@ -131,7 +131,7 @@ public class MenuBar extends JMenuBar {
 	 * 
 	 * @return JMenuItem for the About section.
 	 * 
-	 * @author Trevor Nichols
+	 * @author Trevor Nichols 
 	 * Date: 11/15/19
 	 */
 	private JMenuItem aboutAction() {

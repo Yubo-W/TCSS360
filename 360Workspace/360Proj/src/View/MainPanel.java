@@ -117,7 +117,7 @@ public class MainPanel extends JPanel {
 	/**
 	 * Creates an item window for showing items of a selected tag.
 	 * 
-	 * @author Trevor Nichols
+	 * @author Trevor Nichols And Stas Katrechko
 	 * Date: 12/05/19
 	 */
 	private void createItemWindow() {
