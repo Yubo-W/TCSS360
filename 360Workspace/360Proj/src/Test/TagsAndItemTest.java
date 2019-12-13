@@ -13,7 +13,7 @@ import Model.Item;
 /**
  * Class to test the Tags and Item classes created.
  * 
- * @author Yubo Wang
+ * @author Yubo Wang and Stas Katrechko
  * @version 11/24/19
  */
 public class TagsAndItemTest {
@@ -124,5 +124,7 @@ public class TagsAndItemTest {
 		tempTags.remove(temp1);
 		assertEquals(tempTags, tempItem.getTags());
 	}
+	
+	
 }
 

@@ -12,6 +12,24 @@ public class UserProfile {
 	
 	private String myEmailAddress;
 	
+	public UserProfile() {
+		myUserName = "Null";
+		myEmailAddress = "Null";
+	}
+	
+	/**
+	 * @author staskatrechko 
+	 * Build our class file that will hold our user name and email. 
+	 * @param theUserName user name.
+	 * @param theEmailAddress email address.
+	 */
+	public UserProfile(final String theUserName, final String theEmailAddress) {
+		
+		this.myUserName = theUserName;
+		this.myEmailAddress = theEmailAddress;
+		
+	}
+	
 	/**
 	 * Method to set the profiles user name.
 	 * @author Stas Katrechko
